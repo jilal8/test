@@ -4,8 +4,7 @@
 		private $nombreVie = 5;
 		private $nomPersonnage ;
 
-		public function __construct($nombreVie, $nom){
-			$this->nombreVie = $nombreVie;
+		public function __construct($nom){
 			$this->nomPersonnage = $nom;
 		}
 

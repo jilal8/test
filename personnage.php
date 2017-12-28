@@ -27,7 +27,7 @@
 
 		/**
 		*
-		*cette methode permet de nous mettre a jour le nombre de vie de notre personnage
+		*cette methode permet de nous mettre à jour le nombre de vie de notre personnage
 		*@param $nbre le nombre de vie 
 		*
 		**/

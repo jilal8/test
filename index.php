@@ -21,22 +21,30 @@
  	<?php 
 	include 'Personnage.php';
 	include 'form.php';
+	
+	echo '<div id="connexion">';
+	echo '<h3 class="tittle">Déjà un memebre</h3>';
+	echo '<form action="traitement.php" method="post">';
+	echo $form->input("username","username","text");
+	echo $form->input("password","mot de passe","password");
+	echo $form->submit("submit","se connecter");
+	echo '</form>';
+	echo '</div>';
 
-	//$matie = new Personnage(2,"mahdi");
+	echo '<di id="inscrip">';
+        echo $form->href("s'incrire ici");
+        echo '</div>';
 
-	//$matie->setNom("jilal_mahdi_hassanMHD");
-
-	//var_dump($matie->getNom());
-
-	$form = new form(
-		array(
-			'username'=>'pilote_jilal'
-		)
-	);
-	echo $form->input("username","username");
-	echo $form->input("password","mot de passe");
-
+	echo '<div id="inscription" style="visibility:hidden;">';
+	echo '<h3 class="tittle">Inscription </h3>';
+	echo '<form action="traitementIncsr.php" method="post">';
+	echo $form->input("nom","Votre nom","text");
+	echo $form->input("mail","E-mail","email");
+	echo $form->input("password","choisir mot de passe","password");
+	echo $form->input("password1","confirmer mot de passe","password");
 	echo $form->submit("submit","Envoyer");
+	echo '</form>';
+	echo '</div>';
  ?>
  </body>
  </html>

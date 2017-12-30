@@ -29,6 +29,14 @@
        return '<p>'.$html.'</p>';
     }
     /**
+				 * cette methode va nous permetre de creer un lien cliquable
+				 * @param  String $titre le titre du lien
+				 * @return String        le lien
+				 */
+				public function href($titre){
+						return '<a href="#" id="lieninscription">'.$titre.'</a>';
+				}
+    /**
     *on utilise cette methode nous genere un bouton du type submit pour proceder le soumission des information
     *@param  String $nom pour dire le nom du champ 
     *@param String $libelle pour dire le libelle du champs

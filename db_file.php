@@ -35,7 +35,7 @@
           }
           
           /**
-           * [insert description]
+           * cette method va nous permettre d'inserner des enregistrements dans notre base de données
            * @param  String $id        id de la table users
            * @param  String $nom       username de la table users
            * @param  String $email     email de la personne
@@ -48,7 +48,7 @@
 
           }
           /**
-           * [select description]
+           * cette methode quant à elle retourne le nombre d'enregistrement dont le username est egale à $nom et le password est à egale $pass
            * @param  String $nom  username
            * @param  String  $pass password
            * @return int       nombre de ligne trouvées par la requet select

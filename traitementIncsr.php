@@ -1,25 +1,35 @@
 <?php 
 require 'index.php';
-
-
-	
+require 'BD/db_file.php';
 		if(!empty($_POST)){
-			var_dump($_POST);
-			 $nom=$_POST['nom'];
-			 $email = $_POST['mail'];
-			 $pass=$_POST['password'];
-			 $pass1=$_POST['password1'];
+			
+			 $nom=htmlspecialchars(htmlentities(trim($_POST['nom'])));
+			 $email = htmlspecialchars(htmlentities(trim($_POST['mail'])));
+			 $pass=htmlspecialchars(htmlentities(trim($_POST['password'])));
+			 $pass1=htmlspecialchars(htmlentities(trim($_POST['password1'])));
 
-			 
+			 // echo $nom;
+			 // echo $email;
+			 // echo $pass;
+			 // echo $pass1;
+			 if($pass!=$pass1){
+
+			 	echo "le deux mot de passe ne se correspondent pas.";
+			 	die();
+			 }else{
+			 	
+			 	$connectionbd=connectionBD::getUniqueInstance();
+			 	if($connectionbd->select($nom,$pass)>0){
+			 		echo 'vous êtes déjà un membre';
+			 	}else{
+			 		$connectionbd->insert("",$nom,$email,$pass,"users");
+			 	}
+			 }
 
 		}else{
 			echo "nulll";
 			die();
 		}
-		
-
-		
-
 
 	 
 
